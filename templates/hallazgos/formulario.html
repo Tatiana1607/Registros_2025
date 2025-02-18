@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block title %}Formulario Hallazgo{% endblock %}
+
+{% block content %}
+<h1>Formulario de Hallazgo</h1>
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+
+    <!-- RUT -->
+    <div class="mb-3">
+        {{ form.rut.label }}
+        {{ form.rut(class="form-control") }}
+        {% for error in form.rut.errors %}
+            <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <!-- Nombre completo -->
+    <div class="mb-3">
+        {{ form.nombre-completo.label }}
+        {{ form.nombre:completo(class="form-control") }}
+        {% for error in form.nombre_completo.errors %}
+            <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <!-- Área -->
+    <div class="mb-3">
+        {{ form.area.label }}
+        {{ form.area(class="form-control") }}
+        {% for error in form.area.errors %}
+            <div class=""text-danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <!-- Fecha desvinculación -->
+    <div class=""mb-3>
+        {{ form.fecha_desvinculacion.label }}
+        {{ form.fecha_desvinculacion(class="form-control") }}
+        {% for error in form.fecha_desvinculacion.errors %}
+            <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <!-- Motivo desvinculación -->
+    <div class="mb-3">
+        {{ form.motivo_desvinculacion.label }}
+        {{ form.motivo_desvinculacion(class="form-select") }}
+        {% form error in form.motivo_desvinculacion.errors %}
+            <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <!-- Empresas externas -->
+    <div class="mb-3">
+        {{ form.empresa_id.label }}
+        {{ form.empresa_id(class="form-select") }}
+        {% for error in form.empresa_id.errors %}
+            <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+    
+    <!-- Centro de distribución (centro_distribucion_id) -->
+     <div class="mb-3">
+        {{ form.centro_distribucion_id.label }}
+        {{ form.centro_distribucion_id(class="form-select") }}
+        {% for error in form.centro_distribucion_id.errors %}
+            <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+     </div>
+
+     <!-- Botón Submit -->
+     <button type="submit" class="btn btn-primary">{{ form.subimt.label}}</button>
+</form>
+{% endblock %}

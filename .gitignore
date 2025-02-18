@@ -1,0 +1,21 @@
+#Entorno virtual
+venv/
+
+#Archivos temporales de Python
+*.pyc
+__pycache__/
+
+#Migraciones de base de datos
+migrations/
+
+#Archivos subidos por los usuarios
+static/uploads/*
+
+#Archivos de configuración sensibles
+.env
+
+#Archivos de logs
+*.log
+
+#Archisvos de texto de entorno
+*.txt~

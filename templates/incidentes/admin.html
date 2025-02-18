@@ -1,0 +1,45 @@
+{% extend 'base.html' %}
+{% block title %}Administrar Incidentes{% endblock %}
+
+{% block content %}
+<h1>Listado de Incidentes</h1>
+
+<!-- Botón para ir al formulario de registrar incidente -->
+<a href="{{ url_for('incidentes.registrar') }}" class="btn btn-success mb-3">Registrar Incidente</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>RUT</th>
+            <th>Nombre conductor</th>
+            <th>Patente camión</th>
+            <th>Fecha incidente</th>
+            <th>Lugar incidente</th>
+            <th>Tipo incidente</th>
+            <th>Detalles</th>
+            <th>Empresa de transporte</th>
+            <th>Centro de distribución</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for incidente in incidentes %}
+        <tr>
+            <td>{{ incidente.rut }}</td>
+            <td>{{ incidente.nombre_conductor }}</td>
+            <td>{{ incidente.patente_camion }}</td>
+            <td>{{ incidente.fecha_incidente }}</td>
+            <td>{{ incidente.lugar_incidente }}</td>
+            <td>{{ incidente.tipo_incidente }}</td>
+            <td>{{ incidente.detalles_incidente }}</td>
+            <td>{{ incidente.empresa.nombre if incidente.empresa else 'Sin asignar }}</td>
+            <td>{{ incidente.centro_distribucion.nombre if incidente.centro_distribucion else 'Sin asignar' }}</td>
+            <td>
+                <!-- Botón para editar -->
+                <a href="{{ url_for('incidentes.editar', id=incidente.id) }}" class="btn btn-warning btn-sm">Editar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

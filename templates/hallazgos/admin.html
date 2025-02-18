@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}Administrar Hallazgos{% endblck %}
+
+{ %block content %}
+<h1>Listado de Hallazgos</h1>
+
+<!-- Botón para ir al formulario de registro -->
+<a href="{{ url_for('hallazgos.registrar') }}" class="btn btn.seccess mb-3">Registrar Hallazgo</a>
+
+<!-- Tabala con los hallazgos -->
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>RUT</th>
+            <th>Nombre completo</th>
+            <th>Área</th>
+            <th>Fecha desvinculación</th>
+            <th>Motivo desvinculación</th>
+            <th>Empresa externa</th>
+            <th>Centro de distribución</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for hallazgo in hallazgos %}
+        <tr>
+            <td>{{ hallazgo.rut }}</td>
+            <td>{{ hallazgo.nombre-completo }}</td>
+            <td>{{ hallazgo.area }}</td>
+            <td>{{ hallazgo.fecha_desvinculacion }}</td>
+            <td>{{ hallazgo.motivo_desvinculacion }}</td>
+            <td>{{ hallazgo.empresa.nombre if hallazgo.empresa else 'Sin asignar' }}</td>
+            <td>{{ hallazgo.centro_distribucion.nombre if hallazgo.centro_distribucion else 'Sin asignar' }}</td>
+            <td>
+                <a href="{{ url_for('hallazgos.editar', id=halazgo.id) }}", class="btn btn-warning btn-sm">Editar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

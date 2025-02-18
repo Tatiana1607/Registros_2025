@@ -1,0 +1,231 @@
+/*=== GENERAL ===*/
+body { 
+    font-family: 'Arial', sans-serif;
+    background-color: #d4f8e8;
+    margin: 0;
+    padding: 0;
+}
+
+/* === Barra de navegación === */
+.navbar {
+    background-color: #66bb6a !important;
+}
+
+.navbar-brand {
+    color: #ffffff !important; 
+    font-weight: bold;
+}
+
+.navbar a {
+    color: #ffffff !important;
+}
+
+.navbar a:hover {
+    opacity: 0.8;
+}
+
+/* === CONTAINER PRINCIPAL === */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* === TABLAS === */
+.table {
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table th {
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+}
+
+.table td {
+    text-align: center;
+}
+
+/* === BOTONES === */
+.btn {
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-prymary {
+    background-color: #66bb6a;
+    border: none;
+}
+
+.btn-prymary:hover {
+    background-color: #57a05d;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+.bnt-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.bnt-success:hover {
+    background-color: #218838;
+}
+
+
+/* === FORMULARIOS === */
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #66bb6a;
+}
+
+/* === ALERTAS === */
+.alert {
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.alert-success {
+    background-color: #b2fab4;
+    color: #1b5e20;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+
+/* === PAGINACIÓN === */
+.pagination {
+    justify-content: center;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #4caf50; 
+    border-color: #4caf50;
+}
+
+.pagination .apge-link {
+    color: #4caf50;
+}
+
+.pagination .page-link:hover {
+    background-color: #66bb6a;
+    border-color: #66bb6a;
+    color: white;
+}
+
+
+/* === FOOTER === */
+.footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* === BUSCADOR (Filtro de registros) === */
+.search-box {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #66bb6a;
+}
+
+/*=== BOTÓN FLOTANTE PARA AGREGAR ===*/
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.floating-button:hover {
+    background-color: #57a05d;
+}
+
+/* ===RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .table { 
+        font-size: 14px;
+    }
+
+    .table th, table td {
+        padding: 8px;
+    }
+
+    .navbar {
+        font-size: 14px;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .floating-button {
+        bottom: 15px;
+        right: 15px;
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    .footer {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .table {
+        font-size: 12px;
+    }
+
+    .table th, .table td {
+        padding: 5px;
+    }
+
+    .floating-button {
+        bottom: 10px;
+        right: 10px;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .footer {
+        font-size: 12px;
+    }
+}

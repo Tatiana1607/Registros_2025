@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block title %}Registrar Incidente{% endblock %}
+
+{% block content %}
+<h1>Formulario de Incidentes</h1>
+
+<form method="POST">
+    {{ form.hidden_tag()}}
+
+    <!-- RUT -->
+    <div class="mb-3">
+        {{ form.rut.label }}
+        {{ form.rut(class="form-control") }}
+        {% for error in form.rut.errors %}
+            <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <!-- Nombre conductor -->
+    <div class="mb-3">
+        {{ form.nombre_conductor.label }}
+        {{ form.nombre_conductor(class="form-control") }}
+        {% for error in form.nombre_conductor.errors %}
+            <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <!-- Patente camión -->
+    <div class="mb-3">
+        {{ form.patente_camion.label }}
+        {{ form.patente_camion(class="form-control") }}
+        {% for error in form.patente_camion.errors %}
+            <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <!-- Fecha incidente -->
+    <div class="mb-3">
+        {{ form.fecha_incidente.label }}
+        {{ form.fecha_incidente(class="form-control") }}
+        {% for error in form.fecha_incidente.errors %}
+            <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <!-- Lugar incidente -->
+    <div class="mb-3">
+        {{ form.lugar_incidente.label }}
+        {{ form.lugar_incidente(class="form-control") }}
+        {% for error in form.lugar_incidente.errors %}
+            <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <!-- Tipo incidente -->
+    <div class="mb-3">
+        {{ form.tipo_incidente.label }}
+        {{ form.tipo_incidente(class="form-select") }}
+        {% for error in form.tipo_incidente.errors %}
+            <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <!-- Detalle incidente -->
+    <div class="mb-3">
+        {{ form.detalle_incidente.label }}
+        {{ form.detalle_incidente(class="form-control") }}
+        {% for error in form.detalle_incidente.errors %}
+            <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <!-- Empresa de transporte (empresa_id) -->
+    <div class="mb-3">
+        {{ form.empresa_id.label }}
+        {{ form.empresa_id(class="form-select") }}
+        {% for error in form.empresa_id.errors %}
+            <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <!-- Centro de Distribución (centro_distribucion_id) -->
+    <div class="mb-3">
+        {{ form.centro_distribucion_id.label }}
+        {{ form.centro_distribucion_id(class="form-select") }}
+        {% for error in form.centro_distribucion_id.errors %}
+            <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <button type="submit" class="btn btn-primary">{{ form.submit.label }}</button>
+</form>
+{% endblock %}

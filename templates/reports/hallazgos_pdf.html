@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reporte de Hallazgos</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        table {width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid black; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h2>Reporte de Hallazgos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>RUT</th>
+                <th>Nombre completo</th>
+                <th>Área</th>
+                <th>Fecha desvinculación</th>
+                <th>Motivo desvinculación</th>
+                <th>Empresa externa</th>
+                <th>Centro de distribución</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for hallazgo in hallazgos %}
+            <tr>
+                <td>{{ hallazgo.rut }}</td>
+                <td>{{ hallazgo.nombre_completo }}</td>
+                <td>{{ hallazgo.area }}</td>
+                <td>{{ hallazgo.fecha }}</td>
+                <td>{{ hallazgo.motio_desvinculacion }}</td>
+                <td>{{ hallazgo.empresa.nombre if hallazgo.empresa else 'N/A }}</td>
+                <td>{{ hallazgo.centro_distribucion.nombre if hallazgo.centro_distribuxion else 'N/A }}</td>
+            </tr>
+             {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
